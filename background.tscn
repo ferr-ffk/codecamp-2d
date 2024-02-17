@@ -1,0 +1,146 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg03sg6n52n14"]
+
+[ext_resource type="Script" path="res://background.gd" id="1_da2ea"]
+[ext_resource type="Texture2D" uid="uid://boy2q3otax4bj" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_gy1k8"]
+[ext_resource type="Texture2D" uid="uid://bm0xuyoim0oqi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/rock-1.png" id="3_5ukco"]
+[ext_resource type="Texture2D" uid="uid://dx62wsjrdqiye" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="3_bc6as"]
+[ext_resource type="Texture2D" uid="uid://cp5objgqp736j" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/rock-2.png" id="5_gppao"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_da2ea")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(576, 323)
+scale = Vector2(3, 2.7)
+texture = ExtResource("1_gy1k8")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.56, 0.56)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(568, 633)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(40, 633)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(392, 632)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(216, 632)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(744, 633)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1096, 632)
+texture = ExtResource("3_bc6as")
+
+[node name="Middle8" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(920, 632)
+texture = ExtResource("3_bc6as")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.56, 0.56)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Rock-1" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(43, 618)
+scale = Vector2(3.04245, 2.88208)
+texture = ExtResource("3_5ukco")
+flip_h = true
+
+[node name="Rock-2" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(134, 663)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-3" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(190, 641)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-19" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(252, 665)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-4" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(267.25, 691.75)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-5" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(326, 636)
+scale = Vector2(3.4717, 2.80189)
+texture = ExtResource("3_5ukco")
+
+[node name="Rock-6" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(396.25, 678.75)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-7" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(469.25, 649.75)
+scale = Vector2(2.04717, 2.14151)
+texture = ExtResource("3_5ukco")
+
+[node name="Rock-8" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(550, 675)
+scale = Vector2(3.1553, 2.78947)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-10" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(665.25, 682.75)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-11" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(738.25, 651.75)
+scale = Vector2(2.04717, 2.14151)
+texture = ExtResource("3_5ukco")
+
+[node name="Rock-12" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(810.25, 676.75)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-13" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(921.25, 647.75)
+scale = Vector2(2.04717, 2.14151)
+texture = ExtResource("3_5ukco")
+flip_h = true
+
+[node name="Rock-18" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1111.88, 621.875)
+scale = Vector2(3.36321, 3.12736)
+texture = ExtResource("3_5ukco")
+
+[node name="Rock-15" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(775, 675)
+scale = Vector2(2.04717, 2.14151)
+texture = ExtResource("3_5ukco")
+
+[node name="Rock-14" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(993.25, 672.75)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-17" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1041, 642)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")
+
+[node name="Rock-16" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(849, 663)
+scale = Vector2(1.68182, 1.62281)
+texture = ExtResource("5_gppao")

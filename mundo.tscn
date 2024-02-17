@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://btaiw022vvbyr"]
+[gd_scene load_steps=6 format=3 uid="uid://btaiw022vvbyr"]
 
+[ext_resource type="Script" path="res://background.gd" id="1_0gibo"]
 [ext_resource type="PackedScene" uid="uid://cvcl3o10s4lh3" path="res://player/character_body_2d.tscn" id="1_j737d"]
+[ext_resource type="Texture2D" uid="uid://boy2q3otax4bj" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_l3fse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pxyl"]
 size = Vector2(1153, 237)
@@ -9,6 +11,25 @@ size = Vector2(1153, 237)
 size = Vector2(186.125, 411.25)
 
 [node name="Mundo" type="Node2D"]
+
+[node name="Background" type="ParallaxBackground" parent="."]
+script = ExtResource("1_0gibo")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="Background/ParallaxLayer"]
+position = Vector2(576, 323)
+scale = Vector2(3, 2.7)
+texture = ExtResource("2_l3fse")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.56, 0.56)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.56, 0.56)
+motion_mirroring = Vector2(1200, 0)
 
 [node name="Jogador" parent="." instance=ExtResource("1_j737d")]
 position = Vector2(588, 348)
