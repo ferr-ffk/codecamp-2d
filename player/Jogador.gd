@@ -12,17 +12,17 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animacao = get_node("AnimationPlayer")
 
 # animação quando o node estiver pronto
-func _ready():
-	animacao.play("idle")
-	
-func animacao_quando_pulando():
-	animacao.play("jump")
-
-func animacao_quando_caindo():
-	animacao.play("jump")
-	
-func animacao_quando_correndo():
-	animacao.play("run")
+#func _ready():
+	#animacao.play("idle")
+	#
+#func animacao_quando_pulando():
+	#animacao.play("jump")
+#
+#func animacao_quando_caindo():
+	#animacao.play("jump")
+	#
+#func animacao_quando_correndo():
+	#animacao.play("run")
 
 # a cada tick essa função é chamada
 func _physics_process(delta):
