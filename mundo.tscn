@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://btaiw022vvbyr"]
+[gd_scene load_steps=9 format=3 uid="uid://btaiw022vvbyr"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_0gibo"]
 [ext_resource type="PackedScene" uid="uid://cvcl3o10s4lh3" path="res://player/character_body_2d.tscn" id="1_j737d"]
 [ext_resource type="Texture2D" uid="uid://bw30a2oftigio" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_lekmi"]
 [ext_resource type="Texture2D" uid="uid://boy2q3otax4bj" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_l3fse"]
 [ext_resource type="PackedScene" uid="uid://bhulvgk1s5ij3" path="res://Frog/frog.tscn" id="5_5eb1p"]
+[ext_resource type="Script" path="res://UI/Health/Health.gd" id="6_iu0vi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5bjvs"]
 texture = ExtResource("1_lekmi")
@@ -495,6 +496,7 @@ motion_mirroring = Vector2(1152, 0)
 position = Vector2(578.5, 351)
 scale = Vector2(3.48698, 3.14167)
 texture = ExtResource("2_l3fse")
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
 motion_scale = Vector2(0.56, 0.56)
@@ -507,9 +509,35 @@ motion_mirroring = Vector2(1200, 0)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("5_5eb1p")]
-position = Vector2(467, 319)
+position = Vector2(319, 381)
+
+[node name="Frog2" parent="Mobs" instance=ExtResource("5_5eb1p")]
+position = Vector2(355, 340)
+scale = Vector2(0.5929, 0.5929)
+
+[node name="Frog3" parent="Mobs" instance=ExtResource("5_5eb1p")]
+position = Vector2(383, 382)
+
+[node name="Frog4" parent="Mobs" instance=ExtResource("5_5eb1p")]
+position = Vector2(417, 381)
+scale = Vector2(0.5929, 0.5929)
+
+[node name="Frog5" parent="Mobs" instance=ExtResource("5_5eb1p")]
+position = Vector2(912.079, 916.805)
+scale = Vector2(0.456533, 0.456533)
 
 [node name="Jogador" type="Node2D" parent="."]
 
 [node name="Jogador" parent="Jogador" instance=ExtResource("1_j737d")]
-position = Vector2(588, 348)
+position = Vector2(565, 378)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" type="Label" parent="CanvasLayer"]
+offset_left = 291.0
+offset_top = 505.0
+offset_right = 418.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 15
+text = "HP: N/A"
+script = ExtResource("6_iu0vi")

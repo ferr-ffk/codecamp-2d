@@ -51,12 +51,21 @@ func _process(delta):
 
 func _on_player_death_body_entered(body):
 	if body.name == "Jogador":
-		# para de perseguir o jogador para que a animação não fique andando
-		velocity.x = 0
+		death()
+
+func _on_player_collision_body_entered(body):
+	if body.name == "Jogador":
 		perseguindo = false
+		body.takeDamage()
+		death()
 		
-		get_node("AnimatedSprite2D").play("death")
-		
-		# await serve para esperar o término de alguma função
-		await get_node("AnimatedSprite2D").animation_finished
-		self.queue_free()
+func death():
+	# para de perseguir o jogador para que a animação não fique andando
+	velocity.x = 0
+	perseguindo = false
+	
+	get_node("AnimatedSprite2D").play("death")
+	
+	# await serve para esperar o término de alguma função
+	await get_node("AnimatedSprite2D").animation_finished
+	self.queue_free()

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
+class_name Jogador
 
+var health = 10
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -64,3 +66,14 @@ func _physics_process(delta):
 		animacao.play("fall")
 
 	move_and_slide()
+	
+func _process(delta):
+	if self.health <= 0:
+		self.queue_free()
+		get_tree().change_scene_to_file("res://main.tscn")
+	
+func takeDamage():
+	self.health -= 3
+	animacao.play("hurt")
+	await animacao.animation_finished
+	animacao.play("idle")
