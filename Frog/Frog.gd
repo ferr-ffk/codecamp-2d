@@ -60,11 +60,16 @@ func _on_player_collision_body_entered(body):
 		death()
 		
 func death():
+	# adiciona dinheiro na conta do jogador
+	Game.playerGold += 5
+	
 	# para de perseguir o jogador para que a animação não fique andando
 	velocity.x = 0
 	perseguindo = false
 	
 	get_node("AnimatedSprite2D").play("death")
+	
+	Util.saveGame()
 	
 	# await serve para esperar o término de alguma função
 	await get_node("AnimatedSprite2D").animation_finished

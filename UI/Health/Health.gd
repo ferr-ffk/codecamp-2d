@@ -8,7 +8,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var texto = "Health: %s"
-	var vida = str(get_node("../../Jogador/Jogador").health)
+	var vida = str(Game.playerHP)
 	
 	var label = texto % vida
 	self.text = label

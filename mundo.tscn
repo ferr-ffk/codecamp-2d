@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btaiw022vvbyr"]
+[gd_scene load_steps=10 format=3 uid="uid://btaiw022vvbyr"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_0gibo"]
 [ext_resource type="PackedScene" uid="uid://cvcl3o10s4lh3" path="res://player/character_body_2d.tscn" id="1_j737d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boy2q3otax4bj" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_l3fse"]
 [ext_resource type="PackedScene" uid="uid://bhulvgk1s5ij3" path="res://Frog/frog.tscn" id="5_5eb1p"]
 [ext_resource type="Script" path="res://UI/Health/Health.gd" id="6_iu0vi"]
+[ext_resource type="Script" path="res://UI/Gold/Gold.gd" id="7_1kv5o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5bjvs"]
 texture = ExtResource("1_lekmi")
@@ -541,3 +542,12 @@ offset_bottom = 528.0
 theme_override_font_sizes/font_size = 15
 text = "HP: N/A"
 script = ExtResource("6_iu0vi")
+
+[node name="Gold" type="Label" parent="CanvasLayer"]
+offset_left = 389.0
+offset_top = 505.0
+offset_right = 516.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 15
+text = "GOLD: N/A"
+script = ExtResource("7_1kv5o")
