@@ -38,7 +38,9 @@ animations = [{
 }]
 
 [node name="Cherry" type="Area2D"]
+position = Vector2(0, -8)
 script = ExtResource("1_4juqs")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -49,6 +51,5 @@ sprite_frames = SubResource("SpriteFrames_cefo7")
 autoplay = "default"
 frame = 2
 frame_progress = 0.415197
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

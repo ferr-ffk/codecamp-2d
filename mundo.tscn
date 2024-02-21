@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bw30a2oftigio" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_lekmi"]
 [ext_resource type="Texture2D" uid="uid://boy2q3otax4bj" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_l3fse"]
 [ext_resource type="PackedScene" uid="uid://bhulvgk1s5ij3" path="res://Frog/frog.tscn" id="5_5eb1p"]
-[ext_resource type="PackedScene" uid="uid://oowpvmnruuhd" path="res://Collectibles/Cherry/cherry.tscn" id="5_nhlrh"]
+[ext_resource type="Script" path="res://Collectibles.gd" id="5_72l8x"]
 [ext_resource type="Script" path="res://UI/Health/Health.gd" id="6_iu0vi"]
 [ext_resource type="Script" path="res://UI/Gold/Gold.gd" id="7_1kv5o"]
 
@@ -511,17 +511,17 @@ motion_mirroring = Vector2(1200, 0)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("5_5eb1p")]
-position = Vector2(319, 381)
+position = Vector2(784, 281)
 
 [node name="Frog2" parent="Mobs" instance=ExtResource("5_5eb1p")]
-position = Vector2(355, 340)
+position = Vector2(820, 240)
 scale = Vector2(0.5929, 0.5929)
 
 [node name="Frog3" parent="Mobs" instance=ExtResource("5_5eb1p")]
-position = Vector2(383, 382)
+position = Vector2(848, 282)
 
 [node name="Frog4" parent="Mobs" instance=ExtResource("5_5eb1p")]
-position = Vector2(417, 381)
+position = Vector2(882, 281)
 scale = Vector2(0.5929, 0.5929)
 
 [node name="Frog5" parent="Mobs" instance=ExtResource("5_5eb1p")]
@@ -529,40 +529,36 @@ position = Vector2(912.079, 916.805)
 scale = Vector2(0.456533, 0.456533)
 
 [node name="Collectibles" type="Node2D" parent="."]
+script = ExtResource("5_72l8x")
 
-[node name="Cherry" parent="Collectibles" instance=ExtResource("5_nhlrh")]
-position = Vector2(776, 320)
+[node name="Timer" type="Timer" parent="Collectibles"]
+autostart = true
 
-[node name="Cherry3" parent="Collectibles" instance=ExtResource("5_nhlrh")]
-position = Vector2(856, 384)
-
-[node name="Cherry4" parent="Collectibles" instance=ExtResource("5_nhlrh")]
-position = Vector2(928, 384)
-
-[node name="Cherry2" parent="Collectibles" instance=ExtResource("5_nhlrh")]
-position = Vector2(640, 352)
+[node name="Cherries" type="Node2D" parent="Collectibles"]
 
 [node name="Jogador" type="Node2D" parent="."]
 
 [node name="Jogador" parent="Jogador" instance=ExtResource("1_j737d")]
-position = Vector2(704, 320)
+position = Vector2(336, 368)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Health" type="Label" parent="CanvasLayer"]
-offset_left = 432.0
-offset_top = 432.0
-offset_right = 559.0
-offset_bottom = 455.0
+offset_left = 56.0
+offset_top = 496.0
+offset_right = 183.0
+offset_bottom = 519.0
 theme_override_font_sizes/font_size = 15
 text = "HP: N/A"
 script = ExtResource("6_iu0vi")
 
 [node name="Gold" type="Label" parent="CanvasLayer"]
-offset_left = 560.0
-offset_top = 432.0
-offset_right = 687.0
-offset_bottom = 455.0
+offset_left = 160.0
+offset_top = 496.0
+offset_right = 287.0
+offset_bottom = 519.0
 theme_override_font_sizes/font_size = 15
 text = "GOLD: N/A"
 script = ExtResource("7_1kv5o")
+
+[connection signal="timeout" from="Collectibles/Timer" to="Collectibles" method="_on_timer_timeout"]

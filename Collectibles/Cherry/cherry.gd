@@ -6,6 +6,7 @@ func _on_body_entered(body):
 		# adiciona 3 de vida, limitando em 10 a vida final
 		Game.playerHP = min(10, (Game.playerHP + 3))
 
+		# cria-se dois tweens para executar os dois ao mesmo tempo
 		var tweenPosicao = get_tree().create_tween()
 		var tweenOpacidade = get_tree().create_tween()
 		
