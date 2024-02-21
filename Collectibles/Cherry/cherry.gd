@@ -1,6 +1,5 @@
 extends Area2D
 
-
 func _on_body_entered(body):
 	if body.name == "Jogador":
 		# adiciona 3 de vida, limitando em 10 a vida final

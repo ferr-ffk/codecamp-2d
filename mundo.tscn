@@ -532,6 +532,7 @@ scale = Vector2(0.456533, 0.456533)
 script = ExtResource("5_72l8x")
 
 [node name="Timer" type="Timer" parent="Collectibles"]
+wait_time = 3.0
 autostart = true
 
 [node name="Cherries" type="Node2D" parent="Collectibles"]
