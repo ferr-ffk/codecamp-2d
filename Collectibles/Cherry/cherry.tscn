@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://oowpvmnruuhd"]
+
+[ext_resource type="Script" path="res://Collectibles/Cherry/cherry.gd" id="1_4juqs"]
+[ext_resource type="Texture2D" uid="uid://ba6wy3ja5c1yy" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-2.png" id="1_5xth8"]
+[ext_resource type="Texture2D" uid="uid://qfqgs78ep7lg" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-3.png" id="2_646ur"]
+[ext_resource type="Texture2D" uid="uid://cyy4p08l73fio" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-4.png" id="3_3y8pf"]
+[ext_resource type="Texture2D" uid="uid://b1oy3tqjytmim" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-5.png" id="4_gd2jx"]
+[ext_resource type="Texture2D" uid="uid://c6gwlgguoaa6u" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-6.png" id="5_u50c7"]
+[ext_resource type="Texture2D" uid="uid://d11vmd0xtro4m" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/cherry/cherry-7.png" id="6_x1o0s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_akje4"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cefo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5xth8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_646ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3y8pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gd2jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u50c7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x1o0s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_4juqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_akje4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cefo7")
+autoplay = "default"
+frame = 2
+frame_progress = 0.415197
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
